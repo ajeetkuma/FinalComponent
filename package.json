@@ -1,0 +1,21 @@
+{
+  "name": "finalcomponent",
+  "version": "1.1.1",
+  "node-main": "newServer.js",
+  "description": "It is a component which can be used as a data archival strategy and insert data in cloud hosted mongo enviournment",
+  "main": "newServer.js",
+  "scripts": {
+  	"start": "node newServer.js"
+  },
+  "author": "Ajeet",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.13.3",
+    "jsforce": "*",
+    "json2csv": "^3.7.3",
+    "mongodb": "^2.0.43"
+     
+  }
+}
