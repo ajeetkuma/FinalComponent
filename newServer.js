@@ -67,7 +67,7 @@ app.post("/getRecords", function(req, res) {
   console.log('xxx');
   console.log(x);
   //res.send(x);
-  res.status(201).json(x);
+  res.send(x);
   /*setTimeout(function() {
     
     var obj='Account';
