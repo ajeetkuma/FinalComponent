@@ -52,11 +52,13 @@ function handleError(res, reason, message, code) {
 app.get("/",function(req, res) {
   res.send('hello world');
 })
+app.get("/hello",function(req, res) {
+  res.send('hello fucking world');
+})
 app.post("/getRecords", function(req, res) {
   console.log('geetting data');
   console.log(req.b);
-  console.log('geetting paa');
-  console.log(req.param["data"]);
+  
   var fields=req.body;
   var x= fields["data"];
   console.log('xxx');
