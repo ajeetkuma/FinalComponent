@@ -49,7 +49,9 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
-
+app.get("/",function(req, res) {
+  res.send('hello world');
+})
 app.post("/getRecords", function(req, res) {
   console.log('geetting data');
   console.log(req.b);
