@@ -53,17 +53,21 @@ app.get("/",function(req, res) {
   res.send('hello world');
 })
 app.get("/hello",function(req, res) {
-  res.send('hello fucking world');
+  res.send('hello fuckingworld');
+})
+app.get("/helloworld",function(req, res) {
+  res.send('hello fuckingworld xxxxxx');
 })
 app.post("/getRecords", function(req, res) {
   console.log('geetting data');
-  console.log(req.b);
+  
   
   var fields=req.body;
   var x= fields["data"];
   console.log('xxx');
   console.log(x);
-  setTimeout(function() {
+  res.send(x);
+  /*setTimeout(function() {
     
     var obj='Account';
     
@@ -108,7 +112,7 @@ app.post("/getRecords", function(req, res) {
 
         
       res.status(201).json(fields);
-    }, 3000);
+    }, 3000);*/
 
 });
 
