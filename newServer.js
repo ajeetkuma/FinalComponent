@@ -13,7 +13,7 @@ var app = express();
 
 var cors=require('cors');
 
-app.use(cors({origin:true,credentials: true}));
+app.use(cors({origin:false,credentials: false}));
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
