@@ -15,7 +15,8 @@
     "express": "^4.13.3",
     "jsforce": "*",
     "json2csv": "^3.7.3",
-    "mongodb": "^2.0.43"
+    "mongodb": "^2.0.43",
+    "cors":"*"
      
   }
 }

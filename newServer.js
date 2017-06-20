@@ -11,6 +11,10 @@ var CONTACTS_COLLECTION = "contacts";
 
 var app = express();
 
+var cors=require('cors');
+
+app.use(cors({origin:true,credentials: true}));
+
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -67,8 +71,8 @@ app.post("/getRecords", function(req, res) {
   console.log('xxx');
   console.log(x);
   //res.send(x);
-  res.send(x);
-  /*setTimeout(function() {
+  //res.send(x);
+  setTimeout(function() {
     
     var obj='Account';
     
@@ -113,7 +117,7 @@ app.post("/getRecords", function(req, res) {
 
         
       res.status(201).json(fields);
-    }, 3000);*/
+    }, 3000);
 
 });
 
