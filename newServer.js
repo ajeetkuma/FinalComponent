@@ -77,6 +77,7 @@ app.post("/getRecords", function(req, res) {
   var x= fields["data"];
   console.log('xxx');
   console.log(x);
+  console.log('ds');
   //res.send(x);
   //res.send(x);
   setTimeout(function() {
