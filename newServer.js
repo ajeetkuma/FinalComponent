@@ -57,6 +57,7 @@ app.get("/",function(req, res) {
   res.send('hello world');
 })
 app.get("/hello",function(req, res) {
+  console.log('dsffffffffff');
   res.header("Access-Control-Allow-Origin", "*");
 
   res.send('hello fuckingworld');
@@ -98,7 +99,8 @@ app.post("/getRecords", function(req, res) {
 
                 console.log('results length');
                 console.log(allExistingData.length);
-                if(allExistingData.length > 0)
+                if(allExistingData.length > 0){
+                  if(x != undefined)
                   x.forEach(function(doc) {
                     db.collection(obj).update(
                        {Id:doc.Id},
@@ -107,6 +109,11 @@ app.post("/getRecords", function(req, res) {
                     );
                     
                 });
+                }
+
+
+
+                
                 else{
                   console.log('inside else');
                   db.collection(obj).insert(x, function(err, doc) {
