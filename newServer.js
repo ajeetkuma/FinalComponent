@@ -99,6 +99,8 @@ app.post("/getRecords", function(req, res) {
 
                 console.log('results length');
                 console.log(allExistingData.length);
+                console.log(x.length);
+
                 if(allExistingData.length > 0){
                   if(x != undefined)
                   x.forEach(function(doc) {
