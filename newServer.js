@@ -57,6 +57,8 @@ app.get("/",function(req, res) {
   res.send('hello world');
 })
 app.get("/hello",function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+
   res.send('hello fuckingworld');
 })
 app.get("/helloworld",function(req, res) {
