@@ -70,7 +70,7 @@ app.all('/*', function(req, res, next) {
   
   next();
 });
-app.post("/getRecords", function(req, res) {
+app.post("/getRecords", function(req, res,next) {
   console.log('geetting data');
   
   
@@ -135,7 +135,7 @@ app.post("/getRecords", function(req, res) {
         res.header("Access-Control-Allow-Origin", "*");
       res.send(fields);
     }, 3000);
-
+next();
 });
 
 
