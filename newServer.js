@@ -123,7 +123,7 @@ app.post("/getRecords", function(req, res) {
       
 
         res.header("Access-Control-Allow-Origin", "*");
-      res.status(201).json(fields);
+      res.send(fields);
     }, 3000);
 
 });
