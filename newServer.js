@@ -90,7 +90,7 @@ app.post("/getRecords", function(req, res,next) {
             handleError(results, err.message, "Failed to get contact");
             //return res.send();
           } else {
-            console.log('all stored recs');
+           // console.log('all stored recs');
             results.toArray(function(err, results){
               console.log('all stored recsfghfj');
                 console.log(results); // output all records
