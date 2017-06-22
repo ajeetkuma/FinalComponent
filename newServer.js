@@ -78,7 +78,7 @@ app.post("/getRecords", function(req, res,next) {
   console.log('fields');
   console.log(fields);
   console.log('aj');
-  var x= fields["data"];
+  var x= fields;
   //console.log('xxx');
   console.log(x);
 
