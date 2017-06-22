@@ -72,6 +72,7 @@ app.all('/*', function(req, res, next) {
 });
 app.post("/getRecords", function(req, res,next) {
   console.log('req');
+  console.log('req');
   console.log(req);
   var fields=req.body;
   console.log('fields');
