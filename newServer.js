@@ -71,24 +71,17 @@ app.all('/*', function(req, res, next) {
   next();
 });
 app.post("/getRecords", function(req, res,next) {
-  console.log('geetting data');
-  
-  
   var fields=req.body;
   var x= fields["data"];
   console.log('xxx');
   console.log(x);
-  console.log('ds');
-  //res.send(x);
-  //res.send(x);
-  setTimeout(function() {
-    
-    var obj='Account';
-    
-      var allExistingData =[];
+
+  var obj='Account';
+  var allExistingData =[];
       db.collection(obj).find(function(err, results){
           if (err) {
             handleError(results, err.message, "Failed to get contact");
+            //return res.send();
           } else {
             console.log('all stored recs');
             results.toArray(function(err, results){
@@ -104,6 +97,7 @@ app.post("/getRecords", function(req, res,next) {
                 if(allExistingData.length > 0){
                   if(x != undefined)
                   x.forEach(function(doc) {
+                    if(doc.Id != undefined)
                     db.collection(obj).update(
                        {Id:doc.Id},
                        doc,
@@ -112,17 +106,17 @@ app.post("/getRecords", function(req, res,next) {
                     
                 });
                 }
-
-
-
-                
                 else{
                   console.log('inside else');
                   db.collection(obj).insert(x, function(err, doc) {
                     if (err) {
                       handleError(res, err.message, "Failed to create new contact.");
+
+                      //res.header("Access-Control-Allow-Origin", "*");
+                      //return res.send();
                     } else {
-                      //sres.status(201).json(doc);
+                      //res.header("Access-Control-Allow-Origin", "*");
+                      //return res.send(doc);
                     }
                   });
                 }
@@ -132,10 +126,10 @@ app.post("/getRecords", function(req, res,next) {
       
       
 
-        res.header("Access-Control-Allow-Origin", "*");
-      res.send(fields);
-    }, 3000);
-next();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.send(fields);
+   
+  next();
 });
 
 
